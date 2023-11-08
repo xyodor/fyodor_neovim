@@ -4,11 +4,13 @@ local opts = { noremap = true, silent = true }
 -- General
 keymap.set("n", "<leader>pv", vim.cmd.Ex)
 keymap.set("n", "<leader>w", vim.cmd.w)
+keymap.set({ "n", "i" }, "<C-s>", vim.cmd.w)
 keymap.set("n", "q", function()
-  vim.cmd.bdelete()
-  vim.cmd.bprevious()
+	vim.cmd.bdelete()
+	vim.cmd.bprevious()
 end)
 keymap.set("n", "<leader>pq", vim.cmd.q)
+keymap.set({ "v", "i" }, "<C-I>", "<Esc>", opts)
 
 -- Clipboard
 keymap.set("n", "<leader>y", "+y")
